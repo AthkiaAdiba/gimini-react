@@ -6,7 +6,23 @@ jobs:
   test-code:
     runs-on: ubuntu-latest
     steps:
-      - name: Print working directory
-        run: |
-          node -v
-          git --version
+      - name: Copying the codes
+        uses: actions/checkout@v4
+      - name: install node-js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22.11
+      - name: check node version
+        run: node -v
+# name: Ready the code and deploy
+
+# on: [push, workflow_dispatch]
+
+# jobs:
+#   test-code:
+#     runs-on: ubuntu-latest
+#     steps:
+#       - name: Copying the codes
+#         run: |
+#           node -v
+#           git --version
